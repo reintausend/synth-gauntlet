@@ -1,0 +1,395 @@
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jacquard24-Regular';
+    src: url('./assets/fonts/Jacquard24-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px (62.5% of 16px) */
+    background-image: url('./assets/images/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+    background-attachment: fixed;
+}
+
+body {
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 1.6rem; /* 16px */
+    line-height: 1.6;
+    color: #4b4b4b;
+    position: relative;
+}
+
+/* Blur overlay layer */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); /* Safari support */
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Header Container */
+.header-container {
+    color: #000000;
+    border-bottom: 1px solid #bfbfbf;   
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    text-align: center;
+    padding-top: 1.4rem;
+    padding-bottom: 1.4rem;
+    font-weight: 400;
+    font-family: 'Jacquard24-Regular', Arial, sans-serif;
+    font-size: 2.4rem;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); /* Safari support */
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container img {
+    height: 4rem;
+    width: auto;
+    max-width: 100%;
+}
+
+
+/* Main Container */
+.main-container {
+    display: grid;  
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Content Divs */
+.content {
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid #bbbbbb;   
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px); /* Safari support */
+    background-color: rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.content-title {
+    color: #1e1e1e;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.content-title::before {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    background-image: url('./assets/icons/arrow.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Arrow rotation for expanded state */
+.content.expanded .content-title::before {
+    transform: rotate(90deg);
+}
+
+/* Content Container - Handles all expandable content */
+.content-container {
+    margin-top: 0.8rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.content.expanded .content-container {
+    max-height: none;
+    opacity: 1;
+    padding-bottom: 2rem;
+    
+}
+
+/* About section - always visible */
+.about-section .about-content {
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    margin-top: 0;
+    padding-bottom: 2rem;
+}
+
+/* Content Text */
+.content-text {
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #000000;
+    
+}
+
+/* List styles - remove bullet points */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #000000;
+}
+
+/* Content Subtitle */
+.content-subtitle {
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #000000;
+    
+}
+
+/* Content Image */
+.content-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-top: 1.2rem;
+    display: block;
+    border: 1px solid #000000;
+}
+
+/* Downloads section specific styling */
+.downloads .content-subtitle {
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.downloads .content-subtitle::before {
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: url('./assets/icons/download.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+}
+
+.downloads .content-text {
+    display: flex;
+    align-items: center;
+}
+
+.downloads .content-text::before {
+    content: '';
+    width: 1.6rem;
+    height: 1.6rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+}
+
+/* Mobile First - Default styles (320px and up) */
+.main-container {
+    grid-template-columns: 1fr;
+}
+
+
+
+/* Tablet breakpoint (768px and up) */
+@media screen and (min-width: 768px) {
+    .header-container {
+        padding: 1.5rem 2rem;
+    }
+    
+    .header-container img {
+        height: 5rem;
+    }
+    
+    .main-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+    
+    .content {
+        padding: 2rem;
+        border-bottom: none;
+        width: fit-content;
+        height: fit-content;
+    }
+    
+    /* Always expand content containers on tablet and up */
+    .content-container {
+        max-height: none !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+        padding-bottom: 2rem;
+    }
+    
+    /* Hide arrows on tablet and up */
+    .content-title::before {
+        display: none;
+    }
+}
+
+/* Desktop breakpoint (1024px and up) */
+@media screen and (min-width: 1024px) {
+    .header-container {
+        padding: 2rem 3rem;
+    }
+    
+    .header-container img {
+        height: 6rem;
+    }
+    
+    .main-container {
+        display: block;
+        columns: 3;
+        column-gap: 2rem;
+        padding: 3rem;
+    }
+    
+    .content {
+        padding: 2.5rem;
+        border-bottom: none;
+        break-inside: avoid;
+        margin-bottom: 2rem;
+        display: inline-block;
+        width: 100%;
+        border-radius: 12px;
+    }
+    
+
+    
+    /* Always expand content containers on desktop and up */
+    .content-container {
+        max-height: none !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+        padding-bottom: 2rem;
+    }
+    
+    /* Hide arrows on desktop and up */
+    .content-title::before {
+        display: none;
+    }
+}
+
+/* Large Desktop breakpoint (1200px and up) */
+@media screen and (min-width: 1200px) {
+    .main-container {
+        display: block;
+        columns: 3;
+        column-gap: 2rem;
+        padding: 3rem 2rem;
+    }
+    
+    .content {
+        border-bottom: none;
+        break-inside: avoid;
+        margin-bottom: 2rem;
+        display: inline-block;
+        width: 100%;
+        border-radius: 12px;
+    }
+    
+    /* About section specific background color */
+    .about-section {
+        background-color: rgba(255, 255, 255, 0.125);
+    }
+    
+    /* Always expand content containers on large desktop and up */
+    .content-container {
+        max-height: none !important;
+        opacity: 1 !important;
+        overflow: visible !important;
+        padding-bottom: 2rem;
+    }
+    
+    /* Hide arrows on large desktop and up */
+    .content-title::before {
+        display: none;
+    }
+}
+
+/* Footer Styles */
+.footer {
+    width: 100%;
+}
+
+.footer-spacer {
+    width: 100vw;
+    height: 14.4rem;
+}
+
+.footer-text-container {
+    height: 4.8rem;
+    border-top: 1px solid #bbbbbb;
+    display: flex;
+    align-items: center;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+.footer-text {
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #000000;
+    text-align: left;
+}

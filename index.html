@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synth Gauntlet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Container -->
+    <div class="header-container">
+        <!-- <h1>Synth Gauntlet</h1> -->
+        <img src="./assets/icons/title.svg" alt="Synth Gauntlet">
+    </div>
+
+    <!-- Main Container with 5 Content Divs -->
+    <div class="main-container">
+        <div class="content content-1 about-section">
+            <div class="content-container about-content">
+                <div class="content-text">The Synth Gauntlet is a MIDI device controlled by gestures that connects to your DAW, such as Ableton Live. Assign up to three parameters to the device and use intuitive hand gestures to control filters, effects and other elements in real time during your performance.
+                    <img src="./assets/images/about.png" alt="About" class="content-image">
+                </div>
+            </div>
+        </div>
+        <div class="content content-2">
+            <h2 class="content-title">Instructions</h2>
+            <div class="content-container">
+                <h3 class="content-subtitle">Start Detection</h3>
+                <div class="content-text">Activating the gesture recognition requires you to press your last three fingers on your palm.</div>
+                <br>
+                <h3 class="content-subtitle">Perform One of Three Gestures</h3>
+                <div class="content-image-container">
+                    <img src="./assets/images/gesture-1.png" alt="Gesture 1" class="content-image">
+                    <img src="./assets/images/gesture-2.png" alt="Gesture 2" class="content-image">
+                    <img src="./assets/images/gesture-3.png" alt="Gesture 3" class="content-image">
+                </div>
+                <br>
+                <h3 class="content-subtitle">Change Values</h3>
+                <div class="content-text">Rotate your hand while holding the gesture to adjust the parameter value.</div>
+                <br>
+                <h3 class="content-subtitle">Lock Values</h3>
+                <div class="content-text">Releasing the gesture locks the value at its current level.</div>
+                <div class="content-image-container">
+                    <img src="./assets/images/gesture-4.png" alt="Gesture 4" class="content-image">
+                </div>
+            </div>
+        </div>
+        <div class="content content-3">
+            <h2 class="content-title">Fabrication</h2>
+            <div class="content-container">
+                <div class="content-text">The fabric of the Synth Gauntlet is entirely 3D printed and can be easily assembled at home. Once the electronics are soldered firmly, they can be mounted to the matching fabric patches and lastly connected to the glove. </div>
+                <br>
+                <h3 class="content-subtitle">Printing Specifications</h3>
+                <div class="content-text">
+                    <ul>
+                        <li>TPU Flex Filament</li>
+                        <li>Shore 82A</li>
+                        <li>Printing Temperature: 240°C</li>
+                        <li>Infill Zig-Zag 40%</li>
+                        <li>Printed on Satin Mat</li>
+                    </ul>
+                </div>
+                <br>
+                <h3 class="content-subtitle">Glove Parts</h3>
+                <div class="content-image-container">
+                    <img src="./assets/images/glove-parts.png" alt="Glove Parts" class="content-image">
+                </div>
+                <br>
+                <h3 class="content-subtitle">Parametric Sizing</h3>
+                <div class="content-text">The provided Rhino file contains a parametric sizing system that allows you to adjust the size of the glove to fit your hand easily.</div>
+            </div>
+        </div>
+        <div class="content content-4">
+            <h2 class="content-title">Electronics</h2>
+            <div class="content-container">
+                <div class="content-text">The Synth Gauntlet requires a few components to be soldered together. The following is a list of the components required and their functions.</div>
+                <br>
+                <h3 class="content-subtitle">Components</h3>
+                <div class="content-text">
+                    <ul>
+                        <li>Teensy Bit 4.0 (microcontroller)</li>
+                        <li>MPU-6050 (gyroscope)</li>
+                        <li>Flex Sensor (gesture input)</li>
+                        <li>Adafruit Momentary Capacitive Touch Sensor (button)</li>
+                        <li>NeoPixel 12 LED Ring (visual feedback)</li>
+                    </ul>
+                    <br>
+                    <ul>
+                        <li>Custom PCB board OR perfboard</li>
+                        <li>Jumper wires (20-30 AWG)</li>
+                        <li>Power supply (3.3V)</li>
+                        <li>USB cable (for programming)</li>
+                    </ul>
+                </div>
+                <br>
+                <h3 class="content-subtitle">Circuit Diagram</h3>
+                <div class="content-image-container">
+                    <img src="./assets/images/circuit.webp" alt="Circuit Diagram" class="content-image">
+                </div>
+                <br>
+                <h3 class="content-subtitle">Setup</h3>
+                <div class="content-text">Once the components are soldered together, the provided Arduino sketch can be uploaded to the Teensy Bit 4.0. The device will then be ready to use with your DAW.</div>
+            </div>
+        </div>
+        <div class="content content-5">
+            <h2 class="content-title">Audio</h2>
+            <div class="content-container">
+                <div class="content-text">Altough the Synth Gauntlet can be used with any kind of audio effect, its initial idea was to design a device that supports live performances of electronic music artists in the genre of "Dungeon Synth". The following genre specific Ableton Live stock plugins are pre-mapped to the Synth Gauntlet in the free to download Ableton Live project file.</div>
+            
+            <br>
+                <div class="content-image-container">
+                <img src="./assets/images/plugin-1.webp" alt="Plugin 1" class="content-image">
+                <img src="./assets/images/plugin-2.webp" alt="Plugin 2" class="content-image">
+                <img src="./assets/images/plugin-3.webp" alt="Plugin 3" class="content-image">
+                </div>
+            </div>
+        </div>
+        <div class="content content-6 downloads">
+            <h2 class="content-title">Downloads</h2>
+            <div class="content-container">
+                <br>
+                <h3 class="content-subtitle">Arduino Sketch</h3>
+                <div class="content-text">0.4 MB</div>
+                <br>
+                <h3 class="content-subtitle">Rhino File</h3>
+                <div class="content-text">10.3 MB</div>
+                <br>
+                <h3 class="content-subtitle">Ableton Live Project File</h3>
+                <div class="content-text">1.7 MB</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-spacer"></div>
+        <div class="footer-text-container">
+            <div class="footer-text">Audio Interface Design 2025</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
